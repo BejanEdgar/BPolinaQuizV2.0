@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Întrebări matematice</title>
+    <link rel="shortcut icon" type="image" href="https://cdn-icons-png.freepik.com/256/1739/1739515.png?semt=ais_hybrid">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #2b5876, #4e4376), 
+                        url('https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcm0zNzNiYXRjaDEzLTA4Mi1rcHhrOW5nay5qcGc.jpg');
+            background-size: cover;
+            background-blend-mode: overlay;
+            color: #ffffff;
+            text-align: center;
+            transition: opacity 0.5s ease; /* Adăugăm tranziția */
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 36px;
+            margin-bottom: 1px;
+            text-shadow: 1px 1px 2px #000;
+        }
+        h3 {
+            font-size: 18px;
+            margin-bottom: 1px;
+            text-shadow: 1px 1px 2px #000;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .start-button {
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #00c6ff, #0072ff);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 20px;
+            transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+        .start-button:disabled {
+            background-color: #FFCCBC;
+            cursor: not-allowed;
+        }
+
+        .start-button:hover:not(:disabled) {
+            background: linear-gradient(135deg, #2A69AC, #4B86E8, #1E3C72);
+            transform: scale(1.05);
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 10px;
+            right: 20px;
+            color: gray;
+        }
+
+        /* Efect fade-out */
+        .fade-out {
+            animation: fadeOut 0.5s forwards;
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Întrebări matematice</h1>
+    <p><i>Hai să vedem cât de bine știi matematica</i>🥰</p>
+    <button id="start-button" class="start-button">Începe Testul</button>
+    <div class="footer"><strong>All copy rights are reserved. Created by Butelschi Polina</strong></div>
+    <script>
+        // Function to navigate with fade-out effect
+        function navigateToTest() {
+            const body = document.querySelector('body');
+            body.classList.add('fade-out'); // Aplicăm clasa de fade-out
+            
+            // Așteptăm ca animația să se termine (0.5s) înainte de navigare
+            setTimeout(() => {
+                window.location.href = 'Test.html'; // Navigăm la Test.html
+            }, 500);
+        }
+
+        // Adăugăm evenimentul de click pe butonul "Începe Testul"
+        document.getElementById('start-button').addEventListener('click', navigateToTest);
+
+        // Adăugăm navigarea cu Space Bar
+        document.addEventListener('keydown', function(event) {
+            if (event.code === 'Space' || event.key === ' ') {
+                event.preventDefault(); // Previne scroll-ul
+                navigateToTest(); // Navighează
+            }
+        });
+    </script>
+</body>
+</html>
